@@ -17,5 +17,5 @@ POST http://localhost:4000/todos/
 Content-Type: application/json 
 
 {
-    "title":"Learn Javascript"
+    "title":"Learn React.js"
 }
