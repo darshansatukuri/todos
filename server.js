@@ -13,11 +13,11 @@ const dbPath = path.join(__dirname,'simpleTodos.db')
 
 const cors = require('cors')
 
+
 app.use(cors())
 
 
 app.use(express.json())
-
 
 let db;
 
@@ -27,7 +27,7 @@ const initializeDbAndServer = async() =>{
      db =await open({
          filename:dbPath,
          driver:sqlite3.Database
-     })
+           })
 
      app.listen(4000,()=>{
         console.log("Server has started on port 4000")
@@ -37,8 +37,6 @@ const initializeDbAndServer = async() =>{
     console.log(e.message)
     process.exit(1)
    }
-
-
 }
 
 
@@ -68,7 +66,7 @@ app.post('/todos', async(request,response)=>{
 
     const updateTodos = `INSERT INTO todos(title)VALUES('${title}');`;
     await db.run(updateTodos)
-    response.send("Todo updated Sucessfully")
+    response.send("Todo updated Successfully")
 
 
  })
